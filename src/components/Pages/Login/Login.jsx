@@ -1,14 +1,42 @@
 import styles from '../Login/Login.module.css'
 import libertalogo from '../../images/libertalogo.png'
 import Header from '../../Header/Header';
+import { useNavigate } from 'react-router-dom';
+import { React, useState } from 'react';
+import { emailValidation, passwordValidation } from '../../utils/validador';
+import userService from '../../services/userService';
 
-
-
-const handleClick = () => {
-    console.log("Click")
-}
+//const userServices = new userService()
 
 function Login() {
+    const [loading, setLoading] = useState(false)
+    const [form, setForm] = useState([])
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            setLoading(true)
+            const response = await userServices.login(form)
+            if (response === true){
+                console.log("User Logged")
+            }
+            setLoading(false)
+        }
+        catch (err) {
+            alert("erro")
+        }
+    }
+
+    const handleChange = (event) => {
+        setForm({...form, [event.target.name]: event.target.value})
+    }
+
+    const inputValidation = () => {
+        return emailValidation(form.email) && passwordValidation(form.password)
+    }
+
+    console.log(inputValidation)
+
     return(
         <div>
             <Header/>
@@ -17,17 +45,27 @@ function Login() {
                 <img src={libertalogo}/>
                 <strong>bem-vindo(a) ao Head Control!</strong>
                 <div className={styles.pageon}>
-                <label>
-                    Email
-                    </label>
-                <input type='text' placeholder='Email@liberta.com.vc'/>
+                <label>Email</label>
+                <input 
+                name='email' 
+                type='text'
+                placeholder='Email@liberta.com.vc'
+                onChange={handleChange}
+                />
             </div>
-
                 <div className={styles.pageon}>
                 <label>Senha</label>
-                <input type='password'/>
+                <input 
+                name='password' 
+                type='password'
+                onChange={handleChange}
+                />
             </div>
-                <button onClick={handleClick} href="#" >Login</button>
+                <button
+                type='submit'
+                onClick={handleSubmit}
+                disabled={loading === true || !inputValidation() }
+                >Login</button>
             </footer>
         </div>
         </div>

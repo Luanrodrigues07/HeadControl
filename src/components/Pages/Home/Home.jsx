@@ -1,9 +1,13 @@
 import styles from '../Home/Home.module.css'
 import Header from '../../Header/Header'
+import Container from '../../Container/Cointainer'
 
 function home() {
     return(
-        <Header/>
+        <div>
+            <Header/>
+            <Container/>
+            </div>
     )
 
 }

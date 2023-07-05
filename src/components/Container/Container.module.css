@@ -1,0 +1,43 @@
+.navbar {
+    margin-top: 5rem;
+    margin-left: 5rem;
+    width: 20rem;
+    height: 30rem;
+    padding: 2rem;
+    background-color: var(--gray-800);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid var(--green-500);
+    
+    gap: 2rem;
+}
+.nav strong {
+    padding: 1rem;
+}
+
+.nav a {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    border: 2px solid var(--gray-600);
+    background: var(--green-500);
+    color: white;
+    border-radius: 0.33rem;
+
+    cursor: pointer;
+}
+
+.nav a:hover {
+    background-color: var(--green-300);
+}
+
+.tracet {
+    width: 100%;
+    max-width: 18rem;
+    border: 1px solid var(--grey-300);
+}
