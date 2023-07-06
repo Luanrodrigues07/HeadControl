@@ -24,7 +24,7 @@
     background: var(--gray-600);
     width: 18rem;
     height: 2.3rem;
-    border: 1px solid var(--green-300);
+    border: 1px solid var(--green-100);
     margin: 0.5rem;
     padding: 8px;
     color: white;
@@ -45,15 +45,15 @@
     width: 18rem;
     height: 2.3rem;
     color: white;
-    background: var(--green-500);
+    background: var(--green-100);
     border-radius: 0.3rem;
-    border: 1px solid var(--green-500);
+    border: 1px solid var(--gray-800);
 
     cursor: pointer;
 }
 
 .login button:hover {
-    background-color: var(--green-300);
+    background-color: var(--green-200);
     cursor: pointer;
 }
 

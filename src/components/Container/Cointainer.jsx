@@ -1,4 +1,5 @@
 import styles from '../Container/Container.module.css'
+import { User, Users } from 'phosphor-react'
 
 function Container() {
     return (
@@ -6,7 +7,7 @@ function Container() {
       
       <div className={styles.nav}>
         <strong>Olá, Luan Rodrigues</strong>
-        <a>Cadastrar Perfil</a>
+        <a className={styles.users}> <Users size={12} />Cadastrar Perfil</a>
         <a>Cadastrar Perfil</a>
         <a>Cadastrar Perfil</a>
       </div>
