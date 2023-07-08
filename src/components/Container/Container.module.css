@@ -1,0 +1,74 @@
+.navbar {
+    margin-top: 5rem;
+    margin-left: 2rem;
+    width: 19rem;
+    height: 34rem;
+    padding: 2rem;
+    background-color: var(--gray-800);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid var(--green-100);
+    
+    gap: 2rem;
+}
+
+.nav strong {
+    display: flex;
+    width: 100%;
+    max-width: 16rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    margin-right: 1.3rem;
+}
+
+.nav a {
+    width: 16rem;
+    font-size: 13px;
+    display: inline-block;
+    flex-direction: column;
+    padding: 1rem;
+    border: 2px solid black;
+    background: var(--green-100);
+    color: white;
+    border-radius: 0.33rem;
+    cursor: pointer;
+    text-align: left;
+}
+
+.nav a:hover {
+    background-color: var(--green-200);
+}
+
+.tracet {
+    display: flex;
+    width: 100%;
+    max-width: 16rem;
+    align-items: flex-start;
+    margin-right: 1.3rem;
+}
+
+.stock{
+    background: var(--gray-600);
+    width: 16rem;
+    border-radius: 0.5rem;
+}
+
+.stock a {
+    font-size: 12px;
+    display: inline-block;
+    flex-direction: column;
+    color: white;
+    text-align: flex;
+    margin-left: 0.1rem;
+    padding: 0.7rem;
+    letter-spacing: 0.579px;
+    cursor: default;
+}
+
+.trc {
+    width: 260px;
+    border: 1px solid var(--gray-600);
+}
