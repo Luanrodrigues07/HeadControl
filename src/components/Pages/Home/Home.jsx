@@ -8,6 +8,7 @@ function home() {
       <Header />
       <div className={styles.hw}>
         <Container />
+
         <div className={styles.ve}></div>
       </div>
     </div>
