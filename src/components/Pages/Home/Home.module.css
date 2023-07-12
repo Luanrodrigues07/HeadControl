@@ -10,10 +10,34 @@
 .ve {
     display: flex;
     width: 65rem;
-    height: 34.3rem;
+    height: 39rem;
     background: var(--gray-800);
     margin: 2rem;
     margin-top: 5rem;
     border: 1px solid var(--green-100);
     border-radius: 8px;
+}
+
+.dnt {
+    display: flex;
+    width: 80rem;
+    height: 5rem;
+    border-bottom: 2px solid var(--gray-800);
+    background: var(--gray-600);
+    border-radius: 0.5rem;
+    margin: 0;
+}
+
+.dnt button {
+    width: 5rem;
+    border: none;
+    margin: 0.2rem 2rem;
+    border-radius: 100%;
+    background: var(--gray-600);
+    color: rgb(236, 236, 236);
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    font-weight: normal;
 }

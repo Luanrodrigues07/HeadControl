@@ -10,6 +10,7 @@ function Container() {
         <a>Cadastrar Equipamento</a>
         <a>Cadastrar Software</a>
         <a>Cadastrar Plataformas</a>
+        <a>Cadastrar Formulario</a>
       </div>
       <div className={styles.trc}></div>
       <div className={styles.tracet}>
