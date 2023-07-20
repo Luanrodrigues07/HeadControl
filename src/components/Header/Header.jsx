@@ -6,7 +6,7 @@ function Header() {
   return (
     <header className={styles.header}>
       <img src={IgniteLogo}></img>
-      <strong>Liberta Head Control</strong>
+      <strong>Liberta Cadastro de Perfil</strong>
     </header>
   )
 }

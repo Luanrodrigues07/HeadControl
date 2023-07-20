@@ -45,7 +45,7 @@ function Login() {
       <div className={styles.login}>
         <footer>
           <img src={libertalogo} />
-          <strong>bem-vindo(a) ao Head Control!</strong>
+          <strong>bem-vindo(a) ao Cadastro de Perfil !</strong>
           <div className={styles.pageon}>
             <label>Email</label>
             <input
