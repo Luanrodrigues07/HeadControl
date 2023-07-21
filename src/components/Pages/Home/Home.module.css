@@ -1,119 +1,124 @@
-
-.body {
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  
+  .body {
     display: flex;
-    justify-content: space-between;
-}
-.user {
-    display: grid;
-    width: 18rem;
-    height: 44rem;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+  }
+  
+  .user {
+    display: flex;
+    width: 17rem;
+    height: 47rem;
     background: var(--gray-800);
     border: 1px solid var(--gray-800);
+    height: calc(90vh - 0.5rem);
     border-radius: 0.5rem;
-
     margin-top: 0.5rem;
     padding: 1rem;
-    
-
-}
-
-.row  {
+  }
+  
+  .row {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 71rem;
-    height: 44rem;
+    justify-content: space-between;
+    width: calc(100% - 18rem);
+    height: calc(90vh - 0.5rem);
     background: var(--gray-800);
     border-radius: 0.5rem;
-
     margin-top: 0.5rem;
     padding: 1rem;
-
-}
-
-
-
-.row div  {
+  }
+  
+  .row div {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: white;
     border: 1px solid var(--green-100);
     width: 17rem;
     height: 13rem;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     border-radius: 1.5rem;
     font-size: 1.2rem;
     margin: 0.245rem;
-
     cursor: pointer;
-}
-
-.row div:hover {
+  }
+  
+  .row div:hover {
     background: var(--gray-700);
     transition: 1s;
-}
-.icon {
+  }
+  
+  .icon {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 15rem;
     height: max-content;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-}
-
-.icon img {
+  }
+  
+  .icon img {
     width: 5rem;
     height: 5rem;
     border-radius: 100%;
-    border: 1px solid var(--green-100);
-}
-
-.trc {
+    border: 3px solid var(--green-100);
+  }
+  
+  .trc {
     width: 15rem;
     border: 1px solid var(--gray-600);
     margin-top: 1rem;
-}
-
-.status {
+  }
+  
+  .status {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     width: 16rem;
     height: 15rem;
     background: var(--gray-600);
-    flex-direction: column;
     font-size: 0.9rem;
-    align-items: flex-start;
-    justify-content: center;
     border-radius: 1rem;
     margin-top: 1rem;
     color: white;
-}
-
-.status a {
+  }
+  
+  .status a {
     display: flex;
+    align-items: center;
     margin: 0.9rem;
     font-size: 12px;
-    align-items: center;
-    justify-self: center;
-}
-.boll {
+  }
+  
+  .boll {
     font-size: 20px;
     color: var(--green-100);
     margin-right: 2px;
-}
-
-.buttons {
+  }
+  
+  .buttons {
     display: flex;
-    width: 18rem;
-    height: 15rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.buttons button {
+    width: 18rem;
+    height: 15rem;
+  }
+  
+  .buttons button {
     width: 15rem;
     height: 4rem;
     border-radius: 0.35rem;
@@ -121,12 +126,29 @@
     cursor: pointer;
     color: white;
     border: 2px solid black;
-
     margin: 0.2rem;
-
-}
-
-.buttons button:hover {
+  }
+  
+  .buttons button:hover {
     background-color: var(--green-300);
     transition: 1s;
-}
+  }
+  
+  @media screen and (max-width: 768px) {
+    .body, .user, .row {
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .row {
+      height: auto;
+    }
+  
+    .user, .row div, .icon, .status, .buttons {
+      width: 90%;
+      max-width: 400px;
+      margin: 1rem 0;
+    }
+  }
