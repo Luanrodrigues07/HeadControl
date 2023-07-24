@@ -1,5 +1,7 @@
-import styles from '../esquipaments/Equipament.module.css'
+import React, { useState } from 'react'
+import styles from '../Profile/Profile.module.css'
 import Header from '../../Header/Header'
+
 import {
   UserCirclePlus,
   Cpu,
@@ -8,10 +10,9 @@ import {
   EnvelopeSimple,
   PlusCircle,
 } from 'phosphor-react'
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function equipament() {
+function Profile() {
   const [data, setData] = useState({
     nome: '',
     usuario: '',
@@ -19,20 +20,13 @@ function equipament() {
     cargo: '',
   })
 
-  const notebookOptions = [
-    'Notebook i5 Dell',
-    'Notebook i5 Acer',
-    'Notebook i5 Vaio',
+  const cargoOptions = [
+    'Analista de Suporte N1',
+    'Analista de Suporte N2',
+    'Analista de Suporte N3',
+    'Especialista em Segurança',
+    'Analista de Redes',
   ]
-  const monitorOptions = [
-    'Montior 24 Philips',
-    'Montior 29 LG',
-    'Montior 27 Philips',
-  ]
-  const teclado = ['Com fio', 'Sem fio 2']
-  const mouse = ['Com fio', 'Sem fio 2']
-  const headset = ['Logitech', 'JBL']
-
   const handleInputChange = (e) => {
     const { name, value } = e.target
     setData((prevData) => ({ ...prevData, [name]: value }))
@@ -43,12 +37,19 @@ function equipament() {
     console.log(data)
   }
 
+  const handleNomeUsuarioChange = (e) => {
+    const { value } = e.target
+    setData((prevData) => ({
+      ...prevData,
+      nome: value,
+      usuario: value,
+      email: `${value.toLowerCase()}@liberta.com.vc`,
+    }))
+  }
+
   const navigate = useNavigate()
   const handleChange = () => {
-    navigate('/Softwares')
-  }
-  const backhandleChange = () => {
-    navigate('/Profile')
+    navigate('/Equipaments')
   }
 
   return (
@@ -88,62 +89,36 @@ function equipament() {
           <div className={styles.row}>
             <form onSubmit={handleSubmit}>
               <label>
-                Notebook:
-                <select type="text" name="nome">
-                  <option value="">Selecione o notebook</option>
-                  {notebookOptions.map((cargo) => (
-                    <option key={cargo} value={cargo}>
-                      {cargo}
-                    </option>
-                  ))}
-                </select>
+                Nome:
+                <input
+                  type="text"
+                  name="nome"
+                  placeholder="Nome do Colaborador"
+                />
               </label>
               <label>
-                Monitor:
-                <select>
-                  <option value="">Selecione a Opção</option>
-                  {monitorOptions.map((cargo) => (
-                    <option key={cargo} value={cargo}>
-                      {cargo}
-                    </option>
-                  ))}
-                </select>
+                Usuário:
+                <input
+                  type="text"
+                  name="usuario"
+                  value={data.usuario}
+                  onChange={handleNomeUsuarioChange}
+                  placeholder="Usuario do Colaborador"
+                />
               </label>
               <label>
-                teclado:
-                <select>
-                  <option value="">Selecione a Opção</option>
-                  {teclado.map((cargo) => (
-                    <option key={cargo} value={cargo}>
-                      {cargo}
-                    </option>
-                  ))}
-                </select>
+                Email:
+                <input type="email" name="email" value={data.email} readOnly />
               </label>
               <label>
-                Mouse:
+                Cargo:
                 <select
                   name="cargo"
                   value={data.cargo}
                   onChange={handleInputChange}
                 >
-                  <option value="">Selecione a Opção</option>
-                  {mouse.map((cargo) => (
-                    <option key={cargo} value={cargo}>
-                      {cargo}
-                    </option>
-                  ))}
-                </select>
-              </label>
-              <label>
-                headset:
-                <select
-                  name="cargo"
-                  value={data.cargo}
-                  onChange={handleInputChange}
-                >
-                  <option value="">Selecione a Opção</option>
-                  {headset.map((cargo) => (
+                  <option value="">Selecione o cargo</option>
+                  {cargoOptions.map((cargo) => (
                     <option key={cargo} value={cargo}>
                       {cargo}
                     </option>
@@ -151,9 +126,6 @@ function equipament() {
                 </select>
               </label>
               <div className={styles.avan}>
-                <button onClick={backhandleChange} type="submit">
-                  Voltar
-                </button>
                 <button onClick={handleChange} type="submit">
                   Avançar
                 </button>
@@ -166,4 +138,4 @@ function equipament() {
   )
 }
 
-export default equipament
+export default Profile

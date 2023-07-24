@@ -57,7 +57,7 @@
   
   .row div:hover {
     background: var(--gray-700);
-    transition: 1s;
+    transition: 0.5s;
   }
   
   .icon {

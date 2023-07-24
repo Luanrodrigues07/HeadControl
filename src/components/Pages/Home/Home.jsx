@@ -7,9 +7,17 @@ import {
   AppWindow,
   Browsers,
   EnvelopeSimple,
+  PlusCircle,
 } from 'phosphor-react'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function home() {
+  const navigate = useNavigate()
+  const navigatePages = () => {
+    navigate('/Profile')
+  }
+
   return (
     <div className={styles.Header}>
       <Header />
@@ -44,7 +52,7 @@ function home() {
           </div>
         </div>
         <div className={styles.row}>
-          <div>
+          <div onClick={navigatePages}>
             <a>
               <UserCirclePlus size={50} />
             </a>
@@ -76,9 +84,21 @@ function home() {
           </div>
           <div>
             <a>
-              <EnvelopeSimple size={50} />
+              <PlusCircle size={50} />
             </a>
-            <a>Cadastrar Formulario</a>
+            <a>Adicionar + </a>
+          </div>
+          <div>
+            <a>
+              <PlusCircle size={50} />
+            </a>
+            <a>Adicionar + </a>
+          </div>
+          <div>
+            <a>
+              <PlusCircle size={50} />
+            </a>
+            <a>Adicionar + </a>
           </div>
         </div>
       </div>
