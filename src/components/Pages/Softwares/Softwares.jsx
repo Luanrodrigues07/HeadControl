@@ -92,11 +92,11 @@ function Softwares() {
           <div className={styles.row}>
             <form onSubmit={handleSubmit}>
               <label>
-                Nome:
+                Software 1:
                 <input type="text" name="nome" />
               </label>
               <label>
-                Usuário:
+                Software 2:
                 <input
                   type="text"
                   name="usuario"
@@ -105,11 +105,11 @@ function Softwares() {
                 />
               </label>
               <label>
-                Email:
+                Software 3:
                 <input type="email" name="email" value={data.email} readOnly />
               </label>
               <label>
-                Cargo:
+                Software 4:
                 <select
                   name="cargo"
                   value={data.cargo}
