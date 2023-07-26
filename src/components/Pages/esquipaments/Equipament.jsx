@@ -50,6 +50,9 @@ function equipament() {
   const backhandleChange = () => {
     navigate('/Profile')
   }
+  const toHome = () => {
+    navigate('/home')
+  }
 
   return (
     <div className={styles.Header}>
@@ -60,6 +63,22 @@ function equipament() {
             <img src="https://avatars.githubusercontent.com/u/67129573?v=4" />
             <strong>Luan Rodrigues</strong>
             <p>Analista de Suporte</p>
+          </div>
+          <div className={styles.info}>Olá, Você está na Profile!</div>
+          <div className={styles.trc2}></div>
+          <div className={styles.homebnt}>
+            <button onClick={toHome}>Home</button>
+          </div>
+          <div className={styles.valores}>
+            <strong>Custo do Primeiro Mês</strong>
+            <div className={styles.valorPrimeiroMes}>
+              <a>R$ 0</a>
+            </div>
+            <div className={styles.trc}></div>
+            <strong>Custo Mensal</strong>
+            <div className={styles.valorMes}>
+              <a>R$ 0</a>
+            </div>
           </div>
         </div>
         <div className={styles.util}>
@@ -87,6 +106,9 @@ function equipament() {
           </div>
           <div className={styles.row}>
             <form onSubmit={handleSubmit}>
+              <div className={styles.hoverForm}>
+                <strong>Bem Vindo ao Cadastro de Perfil</strong>
+              </div>
               <label>
                 Notebook:
                 <select type="text" name="nome">

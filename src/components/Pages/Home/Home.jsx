@@ -45,9 +45,9 @@ function home() {
             </div>
             <div className={styles.trc}></div>
             <div className={styles.buttons}>
-              <button>Botao</button>
-              <button>Botao</button>
-              <button>Botao</button>
+              <button>Opção 1</button>
+              <button>Opção 2</button>
+              <button>Opção 3</button>
             </div>
           </div>
         </div>
